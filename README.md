@@ -26,7 +26,15 @@ Decoding captcha with deep learning
 	- concatenated with all letters
 	
 	**Observations**
-		- even now some letters are not rotated right and are not recognised accurately (sol - custom recognition model for letters)
+		- even now some letters are not rotated right and are not recognised accurately, generalization problem of IP (sol - custom recognition model for letters)
 	
+5. Angle rotation technique modified (after getting error)
+	- 4 cases of angles handled
+	- padding size need to be increased
+	- data pipeline to made for training set
+	
+	**Observations**
+		- Skewness of different type can't be generalised with IP techniques, dl model needed
+		
         
 
