@@ -37,4 +37,8 @@ Decoding captcha with deep learning
 		- Skewness of different type can't be generalised with IP techniques, dl model needed
 		
         
-
+6. 5 DL models created with 3/4 cnn and 1 fcn. 
+	- got test scc of 97/98 % and train acc of 98/99 %
+	- may be sota architectures required.
+	- callbacks to be done with pytorch lightning
+	
