@@ -41,4 +41,17 @@ Decoding captcha with deep learning
 	- got test scc of 97/98 % and train acc of 98/99 %
 	- may be sota architectures required.
 	- callbacks to be done with pytorch lightning
+
+7. more experiments done with deeper networks and batch normalization
+	- best model going upto 98.6% of validation accuracy
 	
+	
+# Usage
+
+## Inference
+please use lenet4.pth model as of now (because it corresponds to the architecture class in inference.py file)
+
+```
+python main.py path/to/model path/to/image
+```
+
