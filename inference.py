@@ -6,9 +6,7 @@ from PIL import Image
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-from torchvision import transforms, datasets, models
+from torchvision import transforms
 
 
 def morphology(im):
@@ -148,36 +146,6 @@ def extract_letters(im):
             letters.append(img_padded)
 
     return letters
-
-class CustomNet(nn.Module):
-    def __init__(self):
-        super(CustomNet, self).__init__()
-        self.cnn_model = nn.Sequential(
-            nn.Conv2d(1, 4, kernel_size = 5),
-            nn.ReLU(),
-            nn.AvgPool2d(2, stride = 2),
-            nn.Conv2d(4, 8, kernel_size = 3),
-            nn.ReLU(),
-            nn.AvgPool2d(2, stride = 2),
-            nn.Conv2d(8,16,kernel_size = 3),
-            nn.ReLU(),
-            nn.AvgPool2d(2, stride = 2),
-            nn.Conv2d(16,32,kernel_size = 3),
-            nn.ReLU(),
-            nn.AvgPool2d(2, stride = 2))
-
-        self.fc_model = nn.Sequential(
-            nn.Linear(512, 256), # (N, 2592) -> (N, 512)
-            nn.ReLU(),
-            nn.Linear(256, 30))  # (N, 512)  -> (N, 30)) #30 classes
-
-    def forward(self, x):
-        x = self.cnn_model(x)
-        x = x.view(x.size(0), -1)   
-        x = self.fc_model(x)
-        return x
-
-
 
 def predict_letter(model, letter):
     image_transforms = {

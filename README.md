@@ -49,9 +49,8 @@ Decoding captcha with deep learning
 # Usage
 
 ## Inference
-please use lenet4.pth model as of now (because it corresponds to the architecture class in inference.py file)
 
 ```
-python main.py path/to/model path/to/image
+python main.py train8 path/to/model path/to/image
 ```
 
