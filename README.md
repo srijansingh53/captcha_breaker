@@ -54,3 +54,8 @@ Decoding captcha with deep learning
 python main.py train8 path/to/model path/to/image
 ```
 
+## Active Learning
+```
+python active\ learning/active_learning.py --prepare_data=yes --train_active=yes
+```
+
